@@ -1,4 +1,4 @@
-// const axios = require("axios");
+
 const backendUrl = "https://book-backend-796p.onrender.com";
 
 const getBookData = async () => {
