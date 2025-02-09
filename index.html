@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papQXWxPNk+JU3Zxk5eWQpBfa5J2vKY9rHu4XqdwOYHoD+PJdBvoZsTJlM1POK8jHtC2pY3XvGNMTGvI9t+Yiw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h1>My Library</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="search-section" class="section">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search for books..." id="search-input" aria-label="Search for books">
+                <button id="search-button" aria-label="Search Button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div id="search-results" class="book-grid">
+            </div>
+        </section>
+        <section id="library" class="section">
+            <h2>Your Library</h2>
+            <div class="shelves-container">
+                <div class="shelf" id="to-read">
+                    <div class="shelf-header">
+                        <h3>To Read</h3>
+                        <button class="expand-btn" aria-label="Expand section">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
+                    
+                    <p class="shelf-description">Books in you're current 'To Read' shelf.</p>
+                    <div class="books book-grid"></div>
+                </div>
+                <div class="shelf" id="reading">
+                    <div class="shelf-header">
+                        <h3>Reading</h3>
+                        <button class="expand-btn" aria-label="Expand section">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
+                    <p class="shelf-description">Books you're currently reading.</p>
+                    <div class="books book-grid"></div>
+                </div>
+                <div class="shelf" id="completed">
+                    <div class="shelf-header">
+                        <h3>Completed</h3>
+                        <button class="expand-btn" aria-label="Expand section">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
+                    <p class="shelf-description">Books you've finished reading.</p>
+                    <div class="books book-grid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="shelf-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+            <button class="close-modal" aria-label="Close Modal">&times;</button>
+            <h2 id="modal-title">Add Book To Shelf</h2>
+            <p>Select a shelf below:</p>
+            <div class="modal-buttons">
+                <button class="modal-btn" data-shelf="to-read">To Read</button>
+                <button class="modal-btn" data-shelf="reading">Reading</button>
+                <button class="modal-btn" data-shelf="completed">Completed</button>
+                <button class="modal-btn hide" data-shelf="remove">Remove</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
