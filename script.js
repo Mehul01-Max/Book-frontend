@@ -22,7 +22,7 @@ const printBook = async () => {
     apiUrl = `${backendUrl}/search?query=${searchQuery}`;
     const books = await getBookData();
     ResultDiv = document.querySelector('#search-results');
-    addBook(books.data.items, ResultDiv, true);
+    addBook(books.items, ResultDiv, true);
     
 }
 const hide = document.querySelector('.hide');
